@@ -1,1 +1,25 @@
 Bagify
+
+
+Reaserch
+----------
+
+--:Details of user:--
+fullname - string
+email - string
+password - string
+cart - array
+isadmin - boolean
+oreders - array
+contact - number
+picture - db
+
+
+--:Details of product:--
+image
+name
+price
+discount
+bgcolor
+pannelcolor
+textcolor
