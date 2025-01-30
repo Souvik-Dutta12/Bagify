@@ -4,125 +4,111 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Bagify</title>
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+
 </head>
 
-<body class="font-['helvetica_now_display']">
-    <nav class="w-full fixed top-0 left-0 px-5 py-3">
-        <h3 class="text-xl">Scatch</h3>
-    </nav>    <div class="w-full h-screen flex items-start px-20 py-20">
-        <div class="w-[25%] flex h-screen flex-col items-start">
-            <div class="flex flex-col">
-                <a class="block w-fit mb-2" href="">All Products</a>
-                <a class="block w-fit mb-2" href="">Create new product</a>
+<body class=" bg-gray-900 flex relative items-center justify-center w-screen h-screen font-['helvetica_now_display']">
+    <nav
+        class="flex items-center justify-between absolute top-[2%] left-[2%] right-[2%] p-2 border-b-2 border-green-500">
+        <div class="logo flex gap-2">
+            <span class="text-5xl text-green-500">Bagify</span>
+            <span class="text-5xl text-white">Admin Panel</span>
+        </div>
+        <div class="flex items-center gap-15 justify-between w-1/4">
+            <div class="w-1/2 flex items-center justify-between ">
+                <span class="text-xl text-white"><a class="hover:text-green-500" href="">Home</a></span>
+                <span class="text-xl text-white"><a class="hover:text-green-500" href="">Products</a></span>
+            </div>
+            <div class="w-1/2 flex items-center justify-between ">
+                <span class="text-xl text-white"><a class="hover:text-green-500" href="">Cart</a></span>
+                <span class="text-xl text-white"><a class="hover:text-green-500" href="">My Account</a></span>
             </div>
         </div>
-        <div class="w-[75%] flex flex-col gap-5 h-screen">
-            <a class="text-red-500" href="">Delete all</a>
-            <div class="flex items-start gap-5">
-                <div class="w-60 bg-red-500">
-                    <div class="w-full h-52 bg-yellow-500"></div>
-                    <div class="flex justify-between items-center px-4 py-4">
-                        <div>
-                            <h3>Clinge Bag</h3>
-                            <h4>₹ 1200</h4>
-                        </div>
-                        <a class="w-7 h-7 flex items-center justify-center rounded-full bg-white" href="">
-                            <i class="ri-add-line"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="w-60 bg-red-500">
-                    <div class="w-full h-52 bg-yellow-500"></div>
-                    <div class="flex justify-between items-center px-4 py-4">
-                        <div>
-                            <h3>Clinge Bag</h3>
-                            <h4>₹ 1200</h4>
-                        </div>
-                        <a class="w-7 h-7 flex items-center justify-center rounded-full bg-white" href="">
-                            <i class="ri-add-line"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="w-60 bg-red-500">
-                    <div class="w-full h-52 bg-yellow-500"></div>
-                    <div class="flex justify-between items-center px-4 py-4">
-                        <div>
-                            <h3>Clinge Bag</h3>
-                            <h4>₹ 1200</h4>
-                        </div>
-                        <a class="w-7 h-7 flex items-center justify-center rounded-full bg-white" href="">
-                            <i class="ri-add-line"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="w-60 bg-red-500">
-                    <div class="w-full h-52 bg-yellow-500"></div>
-                    <div class="flex justify-between items-center px-4 py-4">
-                        <div>
-                            <h3>Clinge Bag</h3>
-                            <h4>₹ 1200</h4>
-                        </div>
-                        <a class="w-7 h-7 flex items-center justify-center rounded-full bg-white" href="">
-                            <i class="ri-add-line"></i>
-                        </a>
-                    </div>
+    </nav>
+
+    <div class="main absolute text-white w-[96%] top-[12%] flex items-center justify-center h-[88%] ">
+        <div class="w-1/5 h-full  p-3 flex flex-col justify-between i">
+            <div class="upper flex flex-col justify-between gap-5">
+                <div class="head-links flex flex-col gap-2 ">
+                    <span class="text-xl text-zinc-300"><a class="hover:text-green-500" href="">All Products</a></span>
+                    <span class="text-xl text-zinc-300"><a class="hover:text-green-500" href="">Create New Product</a></span>
                 </div>
             </div>
-            <div class="flex items-start gap-5">
-                <div class="w-60 bg-red-500">
-                    <div class="w-full h-52 bg-yellow-500"></div>
-                    <div class="flex justify-between items-center px-4 py-4">
-                        <div>
-                            <h3>Clinge Bag</h3>
-                            <h4>₹ 1200</h4>
+            <div class="lower cursor-pointer">
+                <span class="text-red-400 flex items-center gap-3 ">
+                    <a class="text-xl " href="">Delete All</a>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(248, 113, 113, 1);"><path d="M6 7H5v13a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7H6zm4 12H8v-9h2v9zm6 0h-2v-9h2v9zm.618-15L15 2H9L7.382 4H3v2h18V4z"></path></svg>
+                </span>
+            </div>
+        </div>
+        <div class="w-4/5 h-full">
+            <div class="cards overflow-y-scroll p-3 h-full w-full flex gap-5 flex-wrap justify-evenly">
+                <div class="card cursor-pointer flex flex-col items-center justify-between w-1/5 h-80">
+                    <div class="bag-img rounded-t-md w-full h-3/4 flex items-center justify-center bg-gray-400 overflow-hidden image-center">
+                        <img src="/images/clinge.png" alt="">
+                    </div>
+                    <div class="details rounded-b-md h-1/4 p-3 w-full flex items-center justify-between bg-gray-500">
+                        <div class="one flex flex-col gap-2 text-gray-900 text-xl ">
+                            <p>Clinge Bag</p>
+                            <p>₹ 1200</p>
                         </div>
-                        <a class="w-7 h-7 flex items-center justify-center rounded-full bg-white" href="">
-                            <i class="ri-add-line"></i>
-                        </a>
+                        <div class="plus w-10 h-10 rounded-full bg-green-500 flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1)"><path d="M19 11h-6V5h-2v6H5v2h6v6h2v-6h6z"></path></svg>
+                        </div>
                     </div>
                 </div>
-                <div class="w-60 bg-red-500">
-                    <div class="w-full h-52 bg-yellow-500"></div>
-                    <div class="flex justify-between items-center px-4 py-4">
-                        <div>
-                            <h3>Clinge Bag</h3>
-                            <h4>₹ 1200</h4>
+
+
+                <div class="card cursor-pointer flex flex-col items-center justify-between w-1/5 h-80">
+                    <div class="bag-img rounded-t-md w-full h-3/4 flex items-center justify-center bg-gray-400 overflow-hidden image-center">
+                        <img src="/images/clinge.png" alt="">
+                    </div>
+                    <div class="details rounded-b-md h-1/4 p-3 w-full flex items-center justify-between bg-gray-500">
+                        <div class="one flex flex-col gap-2 text-gray-900 text-xl ">
+                            <p>Clinge Bag</p>
+                            <p>₹ 1200</p>
                         </div>
-                        <a class="w-7 h-7 flex items-center justify-center rounded-full bg-white" href="">
-                            <i class="ri-add-line"></i>
-                        </a>
+                        <div class="plus w-10 h-10 rounded-full bg-green-500 flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1)"><path d="M19 11h-6V5h-2v6H5v2h6v6h2v-6h6z"></path></svg>
+                        </div>
+                    </div>
+                </div><div class="card cursor-pointer flex flex-col items-center justify-between w-1/5 h-80">
+                    <div class="bag-img rounded-t-md w-full h-3/4 flex items-center justify-center bg-gray-400 overflow-hidden image-center">
+                        <img src="/images/clinge.png" alt="">
+                    </div>
+                    <div class="details rounded-b-md h-1/4 p-3 w-full flex items-center justify-between bg-gray-500">
+                        <div class="one flex flex-col gap-2 text-gray-900 text-xl ">
+                            <p>Clinge Bag</p>
+                            <p class="flex gap-3">₹ 1200 <span class="bg-green-500 w-15 text-center rounded-full">-20%</span></p>
+                        </div>
+                        <div class="plus w-10 h-10 rounded-full bg-green-500 flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1)"><path d="M19 11h-6V5h-2v6H5v2h6v6h2v-6h6z"></path></svg>
+                        </div>
+                    </div>
+                </div><div class="card cursor-pointer flex flex-col items-center justify-between w-1/5 h-80">
+                    <div class="bag-img rounded-t-md w-full h-3/4 flex items-center justify-center bg-gray-400 overflow-hidden image-center">
+                        <img src="/images/clinge.png" alt="">
+                    </div>
+                    <div class="details rounded-b-md h-1/4 p-3 w-full flex items-center justify-between bg-gray-500">
+                        <div class="one flex flex-col gap-2 text-gray-900 text-xl ">
+                            <p>Clinge Bag</p>
+                            <p>₹ 1200</p>
+                        </div>
+                        <div class="plus w-10 h-10 rounded-full bg-green-500 flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1)"><path d="M19 11h-6V5h-2v6H5v2h6v6h2v-6h6z"></path></svg>
+                        </div>
                     </div>
                 </div>
-                <div class="w-60 bg-red-500">
-                    <div class="w-full h-52 bg-yellow-500"></div>
-                    <div class="flex justify-between items-center px-4 py-4">
-                        <div>
-                            <h3>Clinge Bag</h3>
-                            <h4>₹ 1200</h4>
-                        </div>
-                        <a class="w-7 h-7 flex items-center justify-center rounded-full bg-white" href="">
-                            <i class="ri-add-line"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="w-60 bg-red-500">
-                    <div class="w-full h-52 bg-yellow-500"></div>
-                    <div class="flex justify-between items-center px-4 py-4">
-                        <div>
-                            <h3>Clinge Bag</h3>
-                            <h4>₹ 1200</h4>
-                        </div>
-                        <a class="w-7 h-7 flex items-center justify-center rounded-full bg-white" href="">
-                            <i class="ri-add-line"></i>
-                        </a>
-                    </div>
-                </div>
+
+
+
             </div>
         </div>
     </div>
+
 </body>
 
 </html>
