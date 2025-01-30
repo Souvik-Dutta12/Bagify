@@ -4,27 +4,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Bagify</title>
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+
 </head>
 
-<body class="font-['helvetica_now_display']">
-    <nav class="w-full fixed top-0 left-0 px-5 py-3">
-        <h3 class="text-xl">Scatch</h3>
+<body class=" bg-gray-900 flex relative items-center justify-center w-screen h-screen font-['helvetica_now_display']">
+    <nav
+        class="flex items-center justify-between absolute top-[2%] left-[2%] right-[2%] p-2 border-b-2 border-green-500">
+        <div class="logo flex gap-2">
+            <span class="text-5xl text-green-500">Bagify</span>
+            <span class="text-5xl text-white">Shop</span>
+        </div>
+        <div class="flex items-center gap-15 justify-between w-1/4">
+            <div class="w-1/2 flex items-center justify-between ">
+                <span class="text-xl text-white"><a class="hover:text-green-500" href="">Home</a></span>
+                <span class="text-xl text-white"><a class="hover:text-green-500" href="">Products</a></span>
+            </div>
+        </div>
     </nav>
-    <div class="w-full h-screen flex items-start px-20 py-20 gap-10">
-        <div class="w-[30%] rounded-md overflow-hidden">
-            <div class="w-full h-80 bg-yellow-500"></div>
-            <div class="w-full flex justify-between px-5 py-4">
+    <div class="main absolute text-white w-[96%] top-[12%] bg-red-700 flex items-center justify-center h-[88%] ">
+        <div class="w-[25%] rounded-md overflow-hidden">
+            <div class="w-full h-80 bg-gray-400 flex items-center justify-center">
+                <img class=" w-[70%] h-[70%]" src="/images/clinge.png" alt="">
+            </div>
+            <div class="w-full flex justify-between bg-gray-500 px-5 py-4">
                 <h3 class="text-2xl">Clinge Bag</h3>
                 <div class="flex items-center gap-2">
-                    <i class="w-7 h-7 bg-white flex rounded-full items-center justify-center ri-add-line"></i>
+                    <i class="w-7 h-7 bg-white flex rounded-full items-center justify-center ri-add-line">
+                        <svg class="w-[50%] h-[50%]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1)"><path d="M19 11h-6V5h-2v6H5v2h6v6h2v-6h6z"></path></svg>
+                    </i>
                     <div class="px-2 py-1 rounded-md bg-white text-black">01</div>
                     <i class="w-7 h-7 bg-white flex rounded-full items-center justify-center ri-subtract-line"></i>
                 </div>
             </div>
-            <div class="flex items-center justify-between px-5 py-3">
+            <div class="flex items-center bg-gray-700 justify-between px-5 py-3">
                 <h4 class="text-lg">Net Total</h4>
                 <h2 class="text-lg">₹ 1200</h2>
             </div>

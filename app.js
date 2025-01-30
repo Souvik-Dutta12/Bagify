@@ -21,5 +21,8 @@ app.get("/",(req,res)=>{
 app.get("/shop",(req,res)=>{
     res.render("shop");
 })
+app.get("/cart",(req,res)=>{
+    res.render("cart");
+})
 
 app.listen(3000);

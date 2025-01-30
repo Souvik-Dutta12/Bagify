@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,8 +9,10 @@
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
 
 </head>
+
 <body class=" bg-gray-900 flex relative items-center justify-center w-screen h-screen font-['helvetica_now_display']">
-    <nav class="flex items-center justify-between absolute top-[2%] left-[2%] right-[2%] p-2 border-b-2 border-green-500">
+    <nav
+        class="flex items-center justify-between absolute top-[2%] left-[2%] right-[2%] p-2 border-b-2 border-green-500">
         <div class="logo flex gap-2">
             <span class="text-5xl text-green-500">Bagify</span>
             <span class="text-5xl text-white">Shop</span>
@@ -26,15 +29,97 @@
         </div>
     </nav>
 
-    <div class="main absolute w-[96%] top-[12%] flex items-center justify-center h-[88%] ">
-        <div class="w-1/5 h-full bg-pink-200">
-            <div class="list">
-                <p>Sort by: </p>
-                
+    <div class="main absolute text-white w-[96%] top-[12%] flex items-center justify-center h-[88%] ">
+        <div class="w-1/5 h-full  p-3 flex flex-col justify-between i">
+            <div class="upper flex flex-col justify-between gap-5">
+                <div class="list flex gap-3">
+                    <label class=" text-2xl" for="options">Sort by:</label>
+                    <select class="bg-gray-700 p-1 text-zinc-300 text-xl border-2 text-center border-green-500 rounded-md " id="options" name="options">
+                        <option class="text-xl bg-transparent border-none" value="option1">Popular</option>
+                        <option class="text-xl bg-transparent border-none" value="option2">Low Cost</option>
+                        <option class="text-xl bg-transparent border-none" value="option3">High Quality</option>
+                        <option class="text-xl bg-transparent border-none" value="option4">Trending</option>
+                    </select>
+                </div>
+                <div class="head-links flex flex-col gap-2 ">
+                    <span class="text-xl text-zinc-300"><a class="hover:text-green-500" href="">New Collection</a></span>
+                    <span class="text-xl text-zinc-300"><a class="hover:text-green-500" href="">All Products</a></span>
+                    <span class="text-xl text-zinc-300"><a class="hover:text-green-500" href="">Disscounted Products</a></span>
+                </div>
+            </div>
+            <div class="lower">
+                <div class="foot-linkx flex flex-col gap-2">
+                    <span class="text-xl text-white">Filter by:</span>
+                    <span class="text-xl text-zinc-300"><a class="hover:text-green-500" href="">Availabilty</a></span>
+                    <span class="text-xl text-zinc-300"><a class="hover:text-green-500" href="">Disscount</a></span>
+                </div>
             </div>
         </div>
-        <div class="w-4/5 h-full bg-red-500"></div>
+        <div class="w-4/5 h-full">
+            <div class="cards overflow-y-scroll p-3 h-full w-full flex gap-5 flex-wrap justify-evenly">
+                <div class="card cursor-pointer flex flex-col items-center justify-between w-1/5 h-80">
+                    <div class="bag-img rounded-t-md w-full h-3/4 flex items-center justify-center bg-gray-400 overflow-hidden image-center">
+                        <img src="/images/clinge.png" alt="">
+                    </div>
+                    <div class="details rounded-b-md h-1/4 p-3 w-full flex items-center justify-between bg-gray-500">
+                        <div class="one flex flex-col gap-2 text-gray-900 text-xl ">
+                            <p>Clinge Bag</p>
+                            <p>₹ 1200</p>
+                        </div>
+                        <div class="plus w-10 h-10 rounded-full bg-green-500 flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1)"><path d="M19 11h-6V5h-2v6H5v2h6v6h2v-6h6z"></path></svg>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="card cursor-pointer flex flex-col items-center justify-between w-1/5 h-80">
+                    <div class="bag-img rounded-t-md w-full h-3/4 flex items-center justify-center bg-gray-400 overflow-hidden image-center">
+                        <img src="/images/clinge.png" alt="">
+                    </div>
+                    <div class="details rounded-b-md h-1/4 p-3 w-full flex items-center justify-between bg-gray-500">
+                        <div class="one flex flex-col gap-2 text-gray-900 text-xl ">
+                            <p>Clinge Bag</p>
+                            <p>₹ 1200</p>
+                        </div>
+                        <div class="plus w-10 h-10 rounded-full bg-green-500 flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1)"><path d="M19 11h-6V5h-2v6H5v2h6v6h2v-6h6z"></path></svg>
+                        </div>
+                    </div>
+                </div><div class="card cursor-pointer flex flex-col items-center justify-between w-1/5 h-80">
+                    <div class="bag-img rounded-t-md w-full h-3/4 flex items-center justify-center bg-gray-400 overflow-hidden image-center">
+                        <img src="/images/clinge.png" alt="">
+                    </div>
+                    <div class="details rounded-b-md h-1/4 p-3 w-full flex items-center justify-between bg-gray-500">
+                        <div class="one flex flex-col gap-2 text-gray-900 text-xl ">
+                            <p>Clinge Bag</p>
+                            <p class="flex gap-3">₹ 1200 <span class="bg-green-500 w-15 text-center rounded-full">-20%</span></p>
+                        </div>
+                        <div class="plus w-10 h-10 rounded-full bg-green-500 flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1)"><path d="M19 11h-6V5h-2v6H5v2h6v6h2v-6h6z"></path></svg>
+                        </div>
+                    </div>
+                </div><div class="card cursor-pointer flex flex-col items-center justify-between w-1/5 h-80">
+                    <div class="bag-img rounded-t-md w-full h-3/4 flex items-center justify-center bg-gray-400 overflow-hidden image-center">
+                        <img src="/images/clinge.png" alt="">
+                    </div>
+                    <div class="details rounded-b-md h-1/4 p-3 w-full flex items-center justify-between bg-gray-500">
+                        <div class="one flex flex-col gap-2 text-gray-900 text-xl ">
+                            <p>Clinge Bag</p>
+                            <p>₹ 1200</p>
+                        </div>
+                        <div class="plus w-10 h-10 rounded-full bg-green-500 flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1)"><path d="M19 11h-6V5h-2v6H5v2h6v6h2v-6h6z"></path></svg>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
     </div>
-    
+
 </body>
+
 </html>
