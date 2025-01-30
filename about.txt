@@ -23,3 +23,19 @@ discount
 bgcolor
 pannelcolor
 textcolor
+
+
+
+
+index
+---------
+ <!-- <% if(error.length>0){ %> -->
+<!-- <%= error %> -->
+        <!-- <% } %> -->
+
+shop
+--------
+                <% products.forEach(function(product){ %>
+                                    <%= product.name %>
+                                <h4>₹ <%= product.price %>
+                    <% }) %>

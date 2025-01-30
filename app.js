@@ -1,14 +1,13 @@
 const express = require("express");
 const app = express();
 const path = require("path");
+// const userModel = require("./models/user");
+// const postModel = require("./models/post");
 const cookieParser = require("cookie-parser");
-
-require("dotenv").config();
-const db = require("./config/mongoose-connection");
-const index = require("./routes/index");
-const ownersRouter = require("./routes/ownersRouter");
-const usersRouter = require("./routes/usersRouter");
-const productsRouter = require("./routes/productsRouter");
+// const bcrypt = require("bcrypt");
+// const jwt = require("jsonwebtoken");
+// const multer = require("./utils/multer");
+// const upload = require("./utils/multer");
 
 app.set("view engine","ejs");
 app.use(express.json());
@@ -16,9 +15,11 @@ app.use(express.urlencoded({extended: true}));
 app.use(express.static(path.join(__dirname,"public")));
 app.use(cookieParser());
 
-app.use("/", index);
-app.use("/owners", ownersRouter);
-app.use("/users", usersRouter);
-app.use("/products", productsRouter);
+app.get("/",(req,res)=>{
+    res.render("index");
+})
+app.get("/shop",(req,res)=>{
+    res.render("shop");
+})
 
 app.listen(3000);

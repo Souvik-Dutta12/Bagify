@@ -1,5 +1,7 @@
 const express = require("express");
 const router = express.Router();
+const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken")
 
 router.get("/",(req,res)=>{
     res.send("hey its working");
@@ -27,7 +29,7 @@ router.post("/register", (req,res)=>{
                     res.send("User Created Successfully");
                 }
             })
-        })
+        });
     }catch(err){
         res.send(err.message);
     }
