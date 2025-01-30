@@ -27,4 +27,7 @@ app.get("/cart",(req,res)=>{
 app.get("/admin",(req,res)=>{
     res.render("admin");
 })
+app.get("/admin/create",(req,res)=>{
+    res.render("createproducts");
+})
 app.listen(3000);
