@@ -30,4 +30,7 @@ app.get("/admin",(req,res)=>{
 app.get("/admin/create",(req,res)=>{
     res.render("createproducts");
 })
+app.get("/owner",(req,res)=>{
+    res.render("owner-login");
+})
 app.listen(3000);
