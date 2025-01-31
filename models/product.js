@@ -1,5 +1,8 @@
 const mongoose = require("mongoose");
 
+mongoose.connect("mongodb://127.0.0.1:27017/Bagify");
+
+
 const productSchema = mongoose.Schema({
     image: String,
     name: String,
@@ -11,6 +14,7 @@ const productSchema = mongoose.Schema({
     bgcolor: String,
     pannelcolor: String,
     textcolor: String,
+    
 });
 
 module.exports = mongoose.model("product",productSchema);

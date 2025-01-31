@@ -1,5 +1,7 @@
 const mongoose = require("mongoose");
 
+mongoose.connect("mongodb://127.0.0.1:27017/Bagify");
+
 const userSchema = mongoose.Schema({
     fullname: String,
     email: String,
@@ -8,13 +10,18 @@ const userSchema = mongoose.Schema({
         type: Array,
         default: [],
     },
-    // isadmin: Boolean,
+    isadmin: {
+        type: Boolean,
+        default: false 
+    },
+    referalCode:{
+        type: String,
+        default: 0
+    },
     orders: {
         type: Array,
         default: [],
-    },
-    contact: Number,
-    picture: String
+    }
 });
 
 module.exports = mongoose.model("user",userSchema);
