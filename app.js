@@ -15,10 +15,21 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(cookieParser());
 
 const userModel = require("./models/user");
-const ownerModel = require("./models/owner");
+// const ownerModel = require("./models/owner");
 const productModel = require("./models/product");
+// const product = require("./models/product");
 
-app.get("/", (req, res) => {
+
+const owner = {
+    fullname: "Souvik Duta",
+    email: "souvikdutta52005@gmail.com",
+    password: "Souvik@D2005",
+    products:[],
+    referalcode: "Souvik@5122005",
+    isadmin: true
+}
+
+app.get("/", async (req, res) => {
     res.render("index", { message: null });
 });
 
@@ -34,13 +45,16 @@ app.get("/admin", (req, res) => {
     res.render("admin", { message: null });
 });
 
-app.get("/admin/create", (req, res) => {
-    res.render("createproducts", { message: null });
-});
-
 app.get("/owner", (req, res) => {
     res.render("owner-login", { message: null });
 });
+
+
+async function createOwner(){
+    
+
+    console.log(owner);
+}
 
 app.post("/create", async (req, res) => {
     let { fullname, email, password } = req.body;
@@ -76,7 +90,7 @@ app.post("/login", async (req,res)=>{
     if(!user)    return res.render("index",{message: "Something Went Wrong"});
 
     bcrypt.compare(passlog,user.password,(err,result)=>{
-        if(result){
+        if(result && referalcode === 0 && isadmin === 'false'){
             let token = jwt.sign({email: emaillog,userid: user._id},"SUVObag");
             res.cookie("token",token);
             res.redirect("/shop");
@@ -87,6 +101,19 @@ app.post("/login", async (req,res)=>{
     })
 })
 
+app.post("/ownerlogin",(req,res)=>{
+    let{email,password,referal} = req.body;
+    if(!owner)  return res.render("index",{message: "Something Went Wrong"});
+    
+    if(password === owner.password && referal === owner.referalcode && owner.isadmin === true && email === owner.email){
+        let token = jwt.sign({email},"SUVObag");
+        res.cookie("token",token);
+        res.redirect("/admin");
+    }
+    else{
+        res.render("index",{message: "Something Went Wrong"})
+    }
+})
 
 
 

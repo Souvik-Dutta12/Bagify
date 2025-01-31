@@ -85,6 +85,10 @@
         </div>
     </div>
 
+    <div class="owner text-3xl bg-yellow-500 rounded-full  p-5 absolute right-[1%] bottom-[8%] cursor-pointer">
+        <a href="/owner">Owner Section</a>
+    </div>
+
     <% if (message) { %>
         <div id="message" class="fixed top-5 left-1/2 transform -translate-x-1/2 px-3 py-2 rounded-md shadow-lg transition-opacity duration-500 text-xl
             <%= message.includes('Error') ? 'bg-red-500' : 'bg-green-500' %> text-gray-900 text-center">

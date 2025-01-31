@@ -8,6 +8,39 @@
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
 
+    <style>
+        /* Custom scrollbar */
+        .scrollbar::-webkit-scrollbar {
+            width: 12px;
+            /* Width of the scrollbar */
+        }
+
+        .scrollbar::-webkit-scrollbar-track {
+            background: #1a202c;
+            /* bg-gray-900 */
+            border-radius: 6px;
+        }
+
+        .scrollbar::-webkit-scrollbar-thumb {
+            background: #48bb78;
+            /* bg-green-500 */
+            border-radius: 6px;
+            border: 3px solid #1a202c;
+            /* Match the track color */
+        }
+
+        .scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #38a169;
+            /* A darker shade of green for hover */
+        }
+
+        .scrollbar {
+            scrollbar-color: #48bb78 #1a202c;
+            /* thumb and track color */
+            scrollbar-width: thin;
+            /* or 'auto' or 'none' */
+        }
+    </style>
 </head>
 
 <body class=" bg-gray-900 flex relative items-center justify-center w-screen h-screen font-['helvetica_now_display']">
@@ -17,15 +50,12 @@
             <span class="text-5xl text-green-500">Bagify</span>
             <span class="text-5xl text-white">Shop</span>
         </div>
-        <div class="flex items-center gap-15 justify-between w-1/4">
-            <div class="w-1/2 flex items-center justify-between ">
+        <div class="flex items-center justify-evenly  w-1/3">
                 <span class="text-xl text-white"><a class="hover:text-green-500" href="">Home</a></span>
                 <span class="text-xl text-white"><a class="hover:text-green-500" href="">Products</a></span>
-            </div>
-            <div class="w-1/2 flex items-center justify-between ">
                 <span class="text-xl text-white"><a class="hover:text-green-500" href="">Cart</a></span>
                 <span class="text-xl text-white"><a class="hover:text-green-500" href="">My Account</a></span>
-            </div>
+                <span class="text-xl text-gray-900 px-3 py-2 bg-red-400 hover:bg-red-500 rounded-md"><a href="">Log Out</a></span>
         </div>
     </nav>
 
@@ -34,7 +64,9 @@
             <div class="upper flex flex-col justify-between gap-5">
                 <div class="list flex gap-3">
                     <label class=" text-2xl" for="options">Sort by:</label>
-                    <select class="bg-gray-700 p-1 text-zinc-300 text-xl border-2 text-center border-green-500 rounded-md " id="options" name="options">
+                    <select
+                        class="bg-gray-700 p-1 text-zinc-300 text-xl border-2 text-center border-green-500 rounded-md "
+                        id="options" name="options">
                         <option class="text-xl bg-transparent border-none" value="option1">Popular</option>
                         <option class="text-xl bg-transparent border-none" value="option2">Low Cost</option>
                         <option class="text-xl bg-transparent border-none" value="option3">High Quality</option>
@@ -42,9 +74,11 @@
                     </select>
                 </div>
                 <div class="head-links flex flex-col gap-2 ">
-                    <span class="text-xl text-zinc-300"><a class="hover:text-green-500" href="">New Collection</a></span>
+                    <span class="text-xl text-zinc-300"><a class="hover:text-green-500" href="">New
+                            Collection</a></span>
                     <span class="text-xl text-zinc-300"><a class="hover:text-green-500" href="">All Products</a></span>
-                    <span class="text-xl text-zinc-300"><a class="hover:text-green-500" href="">Disscounted Products</a></span>
+                    <span class="text-xl text-zinc-300"><a class="hover:text-green-500" href="">Disscounted
+                            Products</a></span>
                 </div>
             </div>
             <div class="lower">
@@ -56,9 +90,10 @@
             </div>
         </div>
         <div class="w-4/5 h-full">
-            <div class="cards overflow-y-scroll p-3 h-full w-full flex gap-5 flex-wrap justify-evenly">
+            <div class="cards overflow-y-auto scrollbar p-3 h-full w-full flex gap-5 flex-wrap justify-evenly">
                 <div class="card cursor-pointer flex flex-col items-center justify-between w-1/5 h-80">
-                    <div class="bag-img rounded-t-md w-full h-3/4 flex items-center justify-center bg-gray-400 overflow-hidden image-center">
+                    <div
+                        class="bag-img rounded-t-md w-full h-3/4 flex items-center justify-center bg-gray-400 overflow-hidden image-center">
                         <img src="/images/clinge.png" alt="">
                     </div>
                     <div class="details rounded-b-md h-1/4 p-3 w-full flex items-center justify-between bg-gray-500">
@@ -67,14 +102,18 @@
                             <p>₹ 1200</p>
                         </div>
                         <div class="plus w-10 h-10 rounded-full bg-green-500 flex items-center justify-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1)"><path d="M19 11h-6V5h-2v6H5v2h6v6h2v-6h6z"></path></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                style="fill: rgba(0, 0, 0, 1)">
+                                <path d="M19 11h-6V5h-2v6H5v2h6v6h2v-6h6z"></path>
+                            </svg>
                         </div>
                     </div>
                 </div>
 
 
                 <div class="card cursor-pointer flex flex-col items-center justify-between w-1/5 h-80">
-                    <div class="bag-img rounded-t-md w-full h-3/4 flex items-center justify-center bg-gray-400 overflow-hidden image-center">
+                    <div
+                        class="bag-img rounded-t-md w-full h-3/4 flex items-center justify-center bg-gray-400 overflow-hidden image-center">
                         <img src="/images/clinge.png" alt="">
                     </div>
                     <div class="details rounded-b-md h-1/4 p-3 w-full flex items-center justify-between bg-gray-500">
@@ -83,24 +122,35 @@
                             <p>₹ 1200</p>
                         </div>
                         <div class="plus w-10 h-10 rounded-full bg-green-500 flex items-center justify-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1)"><path d="M19 11h-6V5h-2v6H5v2h6v6h2v-6h6z"></path></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                style="fill: rgba(0, 0, 0, 1)">
+                                <path d="M19 11h-6V5h-2v6H5v2h6v6h2v-6h6z"></path>
+                            </svg>
                         </div>
                     </div>
-                </div><div class="card cursor-pointer flex flex-col items-center justify-between w-1/5 h-80">
-                    <div class="bag-img rounded-t-md w-full h-3/4 flex items-center justify-center bg-gray-400 overflow-hidden image-center">
+                </div>
+                <div class="card cursor-pointer flex flex-col items-center justify-between w-1/5 h-80">
+                    <div
+                        class="bag-img rounded-t-md w-full h-3/4 flex items-center justify-center bg-gray-400 overflow-hidden image-center">
                         <img src="/images/clinge.png" alt="">
                     </div>
                     <div class="details rounded-b-md h-1/4 p-3 w-full flex items-center justify-between bg-gray-500">
                         <div class="one flex flex-col gap-2 text-gray-900 text-xl ">
                             <p>Clinge Bag</p>
-                            <p class="flex gap-3">₹ 1200 <span class="bg-green-500 w-15 text-center rounded-full">-20%</span></p>
+                            <p class="flex gap-3">₹ 1200 <span
+                                    class="bg-green-500 w-15 text-center rounded-full">-20%</span></p>
                         </div>
                         <div class="plus w-10 h-10 rounded-full bg-green-500 flex items-center justify-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1)"><path d="M19 11h-6V5h-2v6H5v2h6v6h2v-6h6z"></path></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                style="fill: rgba(0, 0, 0, 1)">
+                                <path d="M19 11h-6V5h-2v6H5v2h6v6h2v-6h6z"></path>
+                            </svg>
                         </div>
                     </div>
-                </div><div class="card cursor-pointer flex flex-col items-center justify-between w-1/5 h-80">
-                    <div class="bag-img rounded-t-md w-full h-3/4 flex items-center justify-center bg-gray-400 overflow-hidden image-center">
+                </div>
+                <div class="card cursor-pointer flex flex-col items-center justify-between w-1/5 h-80">
+                    <div
+                        class="bag-img rounded-t-md w-full h-3/4 flex items-center justify-center bg-gray-400 overflow-hidden image-center">
                         <img src="/images/clinge.png" alt="">
                     </div>
                     <div class="details rounded-b-md h-1/4 p-3 w-full flex items-center justify-between bg-gray-500">
@@ -109,7 +159,10 @@
                             <p>₹ 1200</p>
                         </div>
                         <div class="plus w-10 h-10 rounded-full bg-green-500 flex items-center justify-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1)"><path d="M19 11h-6V5h-2v6H5v2h6v6h2v-6h6z"></path></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                style="fill: rgba(0, 0, 0, 1)">
+                                <path d="M19 11h-6V5h-2v6H5v2h6v6h2v-6h6z"></path>
+                            </svg>
                         </div>
                     </div>
                 </div>
