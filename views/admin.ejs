@@ -49,15 +49,12 @@
             <span class="text-5xl text-green-500">Bagify</span>
             <span class="text-5xl text-white">Admin Panel</span>
         </div>
-        <div class="flex items-center gap-15 justify-between w-1/4">
-            <div class="w-1/2 flex items-center justify-between ">
+        <div class="flex items-center gap-15 justify-evenly w-1/3">
+
                 <span class="text-xl text-white"><a class="hover:text-green-500" href="">Home</a></span>
                 <span class="text-xl text-white"><a class="hover:text-green-500" href="">Products</a></span>
-            </div>
-            <div class="w-1/2 flex items-center justify-between ">
-                <span class="text-xl text-white"><a class="hover:text-green-500" href="">Cart</a></span>
                 <span class="text-xl text-white"><a class="hover:text-green-500" href="">My Account</a></span>
-            </div>
+                <span class="text-xl text-gray-900 px-3 py-2 bg-red-400 hover:bg-red-500 rounded-md"><a href="">Log Out</a></span>
         </div>
     </nav>
 
@@ -66,13 +63,13 @@
             <div class="upper flex flex-col justify-between gap-5">
                 <div class="head-links flex flex-col gap-2 ">
                     <span class="text-xl text-zinc-300"><a class="hover:text-green-500" href="">All Products</a></span>
-                    <span class="text-xl text-zinc-300"><a class="hover:text-green-500" href="">Create New Product</a></span>
+                    <span class="text-xl text-zinc-300"><a class="hover:text-green-500" href="/create">Create New Product</a></span>
                 </div>
             </div>
             <div class="lower cursor-pointer">
-                <span class="text-red-400 flex items-center gap-3 ">
+                <span class="text-red-400 hover:text-red-500 flex items-center gap-3 ">
                     <a class="text-xl " href="">Delete All</a>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(248, 113, 113, 1);"><path d="M6 7H5v13a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7H6zm4 12H8v-9h2v9zm6 0h-2v-9h2v9zm.618-15L15 2H9L7.382 4H3v2h18V4z"></path></svg>
+                    <svg class="hover:text-red-500" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(248, 113, 113, 1);"><path d="M6 7H5v13a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7H6zm4 12H8v-9h2v9zm6 0h-2v-9h2v9zm.618-15L15 2H9L7.382 4H3v2h18V4z"></path></svg>
                 </span>
             </div>
         </div>
@@ -140,6 +137,33 @@
             </div>
         </div>
     </div>
+
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+    const navLinks = document.querySelectorAll("nav .flex a");
+    let activeLink = null;
+
+    navLinks.forEach(link => {
+        link.addEventListener("click", function (event) {
+            event.preventDefault();
+            
+            // Reset previous active link color
+            if (activeLink) {
+                activeLink.classList.remove("text-green-500");
+                activeLink.classList.add("text-white");
+            }
+            
+            // Set new active link color
+            this.classList.remove("text-white");
+            this.classList.add("text-green-500");
+            
+            activeLink = this;
+        });
+    });
+});
+    </script>
 
 </body>
 

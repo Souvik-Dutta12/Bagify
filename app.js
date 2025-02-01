@@ -5,9 +5,6 @@ const cookieParser = require("cookie-parser");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
-// const multer = require("./utils/multer");
-// const upload = require("./utils/multer");
-
 app.set("view engine", "ejs");
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -48,7 +45,9 @@ app.get("/admin", (req, res) => {
 app.get("/owner", (req, res) => {
     res.render("owner-login", { message: null });
 });
-
+app.get("/create",(req,res)=>{
+    res.render("createproducts",{message:null});
+})
 
 async function createOwner(){
     
@@ -114,6 +113,21 @@ app.post("/ownerlogin",(req,res)=>{
         res.render("index",{message: "Something Went Wrong"})
     }
 })
+
+app.post("/createpro", async (req,res)=>{
+    let {image,name,price,discount,bgcolor,pannelcolor,textcolor} = req.body;
+    const product = await productModel.create({
+        image,
+        name,
+        price,
+        discount,
+        bgcolor,
+        pannelcolor,
+        textcolor
+    });
+    res.redirect("/admin");
+})
+
 
 
 
