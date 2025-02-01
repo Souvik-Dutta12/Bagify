@@ -130,8 +130,23 @@ app.post("/createpro", async (req,res)=>{
     res.redirect("/admin");
 })
 
+app.get("/delete/:id", async (req,res)=>{
+    await productModel.findOneAndDelete({_id:req.params.id});
+    res.redirect("/admin");
+})
 
+app.get("/edit/:id", async (req,res)=>{
+    let product = await productModel.findOne({_id:req.params.id});
+    res.render("edit",{product});
+})
 
+app.post("/editted/:id", async (req,res)=>{
+    let {image,name,price,discount,bgcolor,pannelcolor,textcolor} = req.body;
+
+    let product = await productModel.findOneAndUpdate({_id:req.params.id},{image,name,price,discount,bgcolor,pannelcolor,textcolor});
+    res.redirect("/admin");
+
+})
 
 // function isLoggedIn(req,res,next){
 //     if(req.cookies.token == "") res.redirect("/");

@@ -68,17 +68,6 @@
                             Product</a></span>
                 </div>
             </div>
-            <div class="lower cursor-pointer">
-                <span class="text-red-400 hover:text-red-500 flex items-center gap-3 ">
-                    <a class="text-xl " href="">Delete All</a>
-                    <svg class="hover:text-red-500" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                        viewBox="0 0 24 24" style="fill: rgba(248, 113, 113, 1);">
-                        <path
-                            d="M6 7H5v13a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7H6zm4 12H8v-9h2v9zm6 0h-2v-9h2v9zm.618-15L15 2H9L7.382 4H3v2h18V4z">
-                        </path>
-                    </svg>
-                </span>
-            </div>
         </div>
         <div class="w-4/5 h-full">
             <div class="cards overflow-y-auto scrollbar p-3 h-full w-full flex gap-5 flex-wrap justify-evenly">
@@ -105,19 +94,23 @@
                                     </p>
                                 </div>
                                 <div class="flex items-center justify-between gap-3">
-                                    <div
+                                    <a href="/edit/<%= product._id %>">
+                                        <div
                                         class="plus w-10 h-10 rounded-full bg-green-500 flex items-center justify-center">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                             viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1)">
                                             <path d="M19 11h-6V5h-2v6H5v2h6v6h2v-6h6z"></path>
                                         </svg>
                                     </div>
-                                    <svg class="hover:text-red-500" xmlns="http://www.w3.org/2000/svg" width="24"
+                                    </a>
+                                    <a href="/delete/<%= product._id %>">
+                                        <svg class="hover:text-red-500" xmlns="http://www.w3.org/2000/svg" width="24"
                                         height="24" viewBox="0 0 24 24" style="fill: rgba(248, 113, 113, 1);">
                                         <path
                                             d="M6 7H5v13a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7H6zm4 12H8v-9h2v9zm6 0h-2v-9h2v9zm.618-15L15 2H9L7.382 4H3v2h18V4z">
                                         </path>
                                     </svg>
+                                    </a>
                                 </div>
                             </div>
                         </div>
