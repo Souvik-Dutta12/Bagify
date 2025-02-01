@@ -38,8 +38,9 @@ app.get("/cart", (req, res) => {
     res.render("cart", { message: null });
 });
 
-app.get("/admin", (req, res) => {
-    res.render("admin", { message: null });
+app.get("/admin", async (req, res) => {
+    let products = await productModel.find();
+    res.render("admin", {products});
 });
 
 app.get("/owner", (req, res) => {
