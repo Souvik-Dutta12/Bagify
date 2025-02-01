@@ -21,7 +21,6 @@ const owner = {
     fullname: "Souvik Duta",
     email: "souvikdutta52005@gmail.com",
     password: "Souvik@D2005",
-    products:[],
     referalcode: "Souvik@5122005",
     isadmin: true
 }
@@ -47,6 +46,7 @@ app.get("/admin", async (req, res) => {
 app.get("/owner", (req, res) => {
     res.render("owner-login", { message: null });
 });
+
 app.get("/create",(req,res)=>{
     res.render("createproducts",{message:null});
 })
@@ -54,6 +54,21 @@ app.get("/create",(req,res)=>{
 app.get("/discount", async (req,res)=>{
     let products = await productModel.find();
     res.render("discount",{products})
+})
+
+app.get("/delete/:id", async (req,res)=>{
+    await productModel.findOneAndDelete({_id:req.params.id});
+    res.redirect("/admin");
+})
+
+app.get("/edit/:id", async (req,res)=>{
+    let product = await productModel.findOne({_id:req.params.id});
+    res.render("edit",{product});
+})
+
+app.get("/order/:id", async (req,res)=>{
+    let product = await productModel.findOne({_id:req.params.id});
+    res.render("order",{product});
 })
 
 
@@ -128,16 +143,6 @@ app.post("/createpro", async (req,res)=>{
         textcolor
     });
     res.redirect("/admin");
-})
-
-app.get("/delete/:id", async (req,res)=>{
-    await productModel.findOneAndDelete({_id:req.params.id});
-    res.redirect("/admin");
-})
-
-app.get("/edit/:id", async (req,res)=>{
-    let product = await productModel.findOne({_id:req.params.id});
-    res.render("edit",{product});
 })
 
 app.post("/editted/:id", async (req,res)=>{
