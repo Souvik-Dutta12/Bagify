@@ -33,22 +33,6 @@
                 </div>
                 <div style="background-color: <%= product.pannelcolor %>;" class="w-[95%] h-[12%] p-3 flex items-center justify-between">
                     <span class="text-2xl text-white"><%= product.name %></span>
-                    <div class="plus flex items-center justify-evenly w-[30%]">
-                        <div class="cirplus cursor-pointer w-7 h-7 bg-white rounded-full flex items-center justify-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                style="fill: rgba(0, 0, 0, 1);">
-                                <path d="M19 11h-6V5h-2v6H5v2h6v6h2v-6h6z"></path>
-                            </svg>
-                        </div>
-                        <div class="box text-black w-8 h-8 text-center bg-white rounded-md text-xl">1</div>
-                        <div class="cirplus cursor-pointer w-7 h-7 bg-white rounded-full flex items-center justify-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                style="fill: rgba(0, 0, 0, 1);">
-                                <path d="M5 11h14v2H5z"></path>
-                            </svg>
-                        </div>
-
-                    </div>
                 </div>
                 <div class="w-[95%] h-[10%] p-3 pr-15 rounded-b-md bg-gray-600">
                     <div class="text-xl flex items-center justify-between">
@@ -69,8 +53,8 @@
                         <span class="text-xl ">Shipping Fee</span>
                     </div>
                     <div class="flex flex-col gap-3 text-xl">
-                        <span>₹ 1920</span>
-                        <span>₹ 0</span>
+                        <span>₹ <%= product.price %></span>
+                        <span>₹ <%= (product.price*product.discount)/100 %></span>
                         <span>₹ 20</span>
                         <span>Free</span>
                     </div>
@@ -79,22 +63,55 @@
 
             <div class="text-xl flex items-center w-1/4 p-5 justify-between">
                 <span>Total Amount</span>
-                <span class="text-green-500">₹ 1940</span>
+                <span class="text-green-500">₹ <%= (product.price+20)-((product.price*product.discount)/100) %></span>
             </div>
-            <form class="p-5 flex gap-15" action="">
-                <input class="text-xl cursor-pointer text-gray-900 bg-green-500 px-3 py-2 rounded-md w-32" type="submit" value="Place Order">
-                <button class="text-xl cursor-pointer text-gray-900 bg-sky-500 px-3 py-2 rounded-md w-32">
-                    <a href="">Add to Cart</a>
-                </button>
-            </form>
+
+            <div id="success-message" class="absolute top-[1%] left-1/2 transform -translate-x-1/2 -translate-y-20 opacity-0 bg-green-500 text-white text-xl px-5 py-3 rounded-md shadow-md transition-all duration-200 ease-in-out">
+            </div>
+            
+            <!-- Buttons -->
+           <div class="btns flex gap-15 p-5">
+            <button id="place-order" class="text-xl cursor-pointer text-gray-900 bg-green-500 px-3 py-2 rounded-md w-32">
+                Place Order
+            </button>
+            <button id="add-to-cart" class="text-xl cursor-pointer text-gray-900 bg-sky-500 px-3 py-2 rounded-md w-32">
+                <a href="/cart/<%= product._id %>">Add to Cart</a>
+            </button>
+            
+           </div>
 
 
 
         </div>
     </div>
+<script>
+    // Success Message Function
+// Function to show the message with animation
+function showMessage(message) {
+    const messageBox = document.getElementById("success-message");
+    messageBox.textContent = message;
+    messageBox.classList.remove("hidden", "-translate-y-20", "opacity-0");
+    messageBox.classList.add("translate-y-0", "opacity-100");
 
+    // Hide after 3 seconds with animation
+    setTimeout(() => {
+        messageBox.classList.remove("translate-y-0", "opacity-100");
+        messageBox.classList.add("-translate-y-20", "opacity-0");
+    }, 5000);
+}
 
-    <script src="/javascripts/order.js"></script>
+// Handle Place Order Click
+document.getElementById("place-order").addEventListener("click", () => {
+    showMessage("Your order is successful!");
+});
+
+// Handle Add to Cart Click
+document.getElementById("add-to-cart").addEventListener("click", () => {
+    showMessage("Successfully added to cart!");
+});
+
+</script>
+    
 </body>
 
 </html>

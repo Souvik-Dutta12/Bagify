@@ -14,6 +14,7 @@ app.use(cookieParser());
 const userModel = require("./models/user");
 // const ownerModel = require("./models/owner");
 const productModel = require("./models/product");
+const user = require("./models/user");
 // const product = require("./models/product");
 
 
@@ -152,6 +153,7 @@ app.post("/editted/:id", async (req,res)=>{
     res.redirect("/admin");
 
 })
+
 
 // function isLoggedIn(req,res,next){
 //     if(req.cookies.token == "") res.redirect("/");
