@@ -17,15 +17,13 @@
             <span class="text-5xl text-green-500">Bagify</span>
             <span class="text-5xl text-white">Admin Panel</span>
         </div>
-        <div class="flex items-center gap-15 justify-between w-1/4">
-            <div class="w-1/2 flex items-center justify-between ">
-                <span class="text-xl text-white"><a class="hover:text-green-500" href="">Home</a></span>
-                <span class="text-xl text-white"><a class="hover:text-green-500" href="">Products</a></span>
-            </div>
-            <div class="w-1/2 flex items-center justify-between ">
-                <span class="text-xl text-white"><a class="hover:text-green-500" href="">Cart</a></span>
-                <span class="text-xl text-white"><a class="hover:text-green-500" href="">My Account</a></span>
-            </div>
+        <div class="flex items-center gap-15 justify-evenly w-1/3">
+
+            <span class="text-xl text-white"><a class="hover:text-green-500" href="/">Home</a></span>
+            <span class="text-xl text-white"><a class="hover:text-green-500" href="/admin">Products</a></span>
+            <span class="text-xl text-white"><a class="hover:text-green-500" href="">My Account</a></span>
+            <span class="text-xl text-gray-900 px-3 py-2 bg-red-400 hover:bg-red-500 rounded-md"><a href="">Log
+                    Out</a></span>
         </div>
     </nav>
 
@@ -33,8 +31,8 @@
         <div class="w-1/5 h-full  p-3 flex flex-col justify-between i">
             <div class="upper flex flex-col justify-between gap-5">
                 <div class="head-links flex flex-col gap-2 ">
-                    <span class="text-xl text-zinc-300"><a class="hover:text-green-500" href="">All Products</a></span>
-                    <span class="text-xl text-zinc-300"><a class="hover:text-green-500" href="">Create New Product</a></span>
+                    <span class="text-xl text-zinc-300"><a class="hover:text-green-500" href="/admin">All Products</a></span>
+                    <span class="text-xl text-zinc-300"><a class="hover:text-green-500" href="/create">Create New Product</a></span>
                 </div>
             </div>
             <div class="lower cursor-pointer">
@@ -74,6 +72,7 @@
             </form>
         </div>
     </div>
+
 
 </body>
 

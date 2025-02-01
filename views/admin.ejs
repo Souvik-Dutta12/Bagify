@@ -51,8 +51,8 @@
         </div>
         <div class="flex items-center gap-15 justify-evenly w-1/3">
 
-            <span class="text-xl text-white"><a class="hover:text-green-500" href="">Home</a></span>
-            <span class="text-xl text-white"><a class="hover:text-green-500" href="">Products</a></span>
+            <span class="text-xl text-white"><a class="hover:text-green-500" href="/">Home</a></span>
+            <span class="text-xl text-white"><a class="hover:text-green-500" href="/admin">Products</a></span>
             <span class="text-xl text-white"><a class="hover:text-green-500" href="">My Account</a></span>
             <span class="text-xl text-gray-900 px-3 py-2 bg-red-400 hover:bg-red-500 rounded-md"><a href="">Log
                     Out</a></span>
@@ -136,30 +136,6 @@
 
 
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const navLinks = document.querySelectorAll("nav .flex a");
-            let activeLink = null;
-
-            navLinks.forEach(link => {
-                link.addEventListener("click", function (event) {
-                    event.preventDefault();
-
-                    // Reset previous active link color
-                    if (activeLink) {
-                        activeLink.classList.remove("text-green-500");
-                        activeLink.classList.add("text-white");
-                    }
-
-                    // Set new active link color
-                    this.classList.remove("text-white");
-                    this.classList.add("text-green-500");
-
-                    activeLink = this;
-                });
-            });
-        });
-    </script>
 
 </body>
 

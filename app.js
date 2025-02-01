@@ -30,8 +30,9 @@ app.get("/", async (req, res) => {
     res.render("index", { message: null });
 });
 
-app.get("/shop", (req, res) => {
-    res.render("shop", { message: null });
+app.get("/shop", async (req, res) => {
+    let products = await productModel.find();
+    res.render("shop", {products})
 });
 
 app.get("/cart", (req, res) => {
@@ -50,11 +51,11 @@ app.get("/create",(req,res)=>{
     res.render("createproducts",{message:null});
 })
 
-async function createOwner(){
-    
+app.get("/discount", async (req,res)=>{
+    let products = await productModel.find();
+    res.render("discount",{products})
+})
 
-    console.log(owner);
-}
 
 app.post("/create", async (req, res) => {
     let { fullname, email, password } = req.body;
